@@ -1,37 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Premium car rental service - Luxury, Economy, SUV, and Electric vehicles available">
+    <meta name="description"
+        content="Premium car rental service - Luxury, Economy, SUV, and Electric vehicles available">
     <meta name="keywords" content="car rental, luxury car rental, SUV rental, electric car rental, vehicle rental">
     <title>Premium Car Rental - Your Journey Starts Here</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
+
 <body>
-    <!-- Language Switcher -->
-    <div class="language-switcher">
-        <button class="lang-btn active" data-lang="en">EN</button>
-        <button class="lang-btn" data-lang="ar">AR</button>
-        <button class="lang-btn" data-lang="fr">FR</button>
-        <button class="lang-btn" data-lang="pl">PL</button>
-        <button class="lang-btn" data-lang="cs">CS</button>
+    <!-- Header Controls -->
+    <div class="header-controls">
+        <div class="control-panel">
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Dark Mode">
+                <span class="icon">🌙</span>
+            </button>
+            <div class="divider" style="width: 1px; background: rgba(0,0,0,0.1); margin: 0 4px;"></div>
+            <button class="lang-btn active" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="ar">AR</button>
+            <button class="lang-btn" data-lang="fr">FR</button>
+            <button class="lang-btn" data-lang="pl">PL</button>
+            <button class="lang-btn" data-lang="cs">CS</button>
+        </div>
     </div>
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
         <div class="hero-overlay"></div>
-        <div class="hero-content">
+        <div class="hero-content fade-in">
             <h1 class="hero-title" data-key="hero.title">Drive Your Dreams</h1>
-            <p class="hero-subtitle" data-key="hero.subtitle">Premium car rental service for every journey</p>
-            <div class="hero-cta">
+            <p class="hero-subtitle fade-in delay-100" data-key="hero.subtitle">Premium car rental service for every
+                journey</p>
+            <div class="hero-cta fade-in delay-200">
                 <a href="#cars" class="btn btn-primary" data-key="hero.cta">Browse Cars</a>
                 <a href="#contact" class="btn btn-secondary" data-key="hero.contact">Contact Us</a>
             </div>
         </div>
-        <div class="hero-scroll">
+        <div class="hero-scroll" onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'})">
             <span data-key="hero.scroll">Scroll to explore</span>
             <div class="scroll-arrow">↓</div>
         </div>
@@ -41,22 +51,22 @@
     <section class="features" id="features">
         <div class="container">
             <div class="features-grid">
-                <div class="feature-card">
+                <div class="feature-card fade-in">
                     <div class="feature-icon">🚗</div>
                     <h3 data-key="features.card1.title">Wide Selection</h3>
                     <p data-key="features.card1.desc">From economy to luxury, find your perfect ride</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card fade-in delay-100">
                     <div class="feature-icon">⚡</div>
                     <h3 data-key="features.card2.title">Instant Booking</h3>
                     <p data-key="features.card2.desc">Book online in minutes, drive away today</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card fade-in delay-200">
                     <div class="feature-icon">🛡️</div>
                     <h3 data-key="features.card3.title">Full Insurance</h3>
                     <p data-key="features.card3.desc">Comprehensive coverage included</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card fade-in delay-300">
                     <div class="feature-icon">⭐</div>
                     <h3 data-key="features.card4.title">Best Prices</h3>
                     <p data-key="features.card4.desc">Competitive rates, no hidden fees</p>
@@ -68,20 +78,15 @@
     <!-- Cars Showcase Section -->
     <section class="cars" id="cars">
         <div class="container">
-            <h2 class="section-title" data-key="cars.title">Our Fleet</h2>
-            <p class="section-subtitle" data-key="cars.subtitle">Choose from our premium collection</p>
+            <h2 class="section-title fade-in" data-key="cars.title">Our Fleet</h2>
+            <p class="section-subtitle fade-in delay-100" data-key="cars.subtitle">Choose from our premium collection
+            </p>
             <div class="cars-grid">
                 <!-- Tesla Model 3 -->
-                <div class="car-card" data-category="electric">
+                <div class="car-card fade-in" data-category="electric">
                     <div class="car-image-wrapper">
-                        <img 
-                            src="Pics/tesla model 3.png" 
-                            alt="Tesla Model 3" 
-                            class="car-image"
-                            loading="lazy"
-                            width="800"
-                            height="600"
-                        >
+                        <img src="Pics/tesla model 3.png" alt="Tesla Model 3" class="car-image" loading="lazy"
+                            width="800" height="600">
                         <div class="car-badge electric" data-key="cars.badge.electric">Electric</div>
                     </div>
                     <div class="car-info">
@@ -97,21 +102,16 @@
                             </div>
                             <a href="#contact" class="btn btn-small" data-key="cars.rent">Rent Now</a>
                         </div>
-                        <p class="car-best-for" data-key="cars.best">Best for: <span data-key="cars.tesla.best">Tech-savvy city trips</span></p>
+                        <p class="car-best-for"><span data-key="cars.best">Best for:</span> <span
+                                data-key="cars.tesla.best">Tech-savvy city trips</span></p>
                     </div>
                 </div>
 
                 <!-- BMW 4 Series -->
-                <div class="car-card" data-category="luxury">
+                <div class="car-card fade-in delay-100" data-category="luxury">
                     <div class="car-image-wrapper">
-                        <img 
-                            src="Pics/BMW 4 Series.png" 
-                            alt="BMW 4 Series" 
-                            class="car-image"
-                            loading="lazy"
-                            width="800"
-                            height="600"
-                        >
+                        <img src="Pics/BMW 4 Series.png" alt="BMW 4 Series" class="car-image" loading="lazy" width="800"
+                            height="600">
                         <div class="car-badge luxury" data-key="cars.badge.luxury">Luxury</div>
                     </div>
                     <div class="car-info">
@@ -127,21 +127,17 @@
                             </div>
                             <a href="#contact" class="btn btn-small" data-key="cars.rent">Rent Now</a>
                         </div>
-                        <p class="car-best-for" data-key="cars.best">Best for: <span data-key="cars.bmw.best">Business meetings</span></p>
+                        <p class="car-best-for"><span data-key="cars.best">Best for:</span> <span
+                                data-key="cars.bmw.best">Business
+                                meetings</span></p>
                     </div>
                 </div>
 
                 <!-- Toyota RAV4 -->
-                <div class="car-card" data-category="suv">
+                <div class="car-card fade-in delay-200" data-category="suv">
                     <div class="car-image-wrapper">
-                        <img 
-                            src="Pics/Toyota RAV4.png" 
-                            alt="Toyota RAV4" 
-                            class="car-image"
-                            loading="lazy"
-                            width="800"
-                            height="600"
-                        >
+                        <img src="Pics/Toyota RAV4.png" alt="Toyota RAV4" class="car-image" loading="lazy" width="800"
+                            height="600">
                         <div class="car-badge suv" data-key="cars.badge.suv">SUV</div>
                     </div>
                     <div class="car-info">
@@ -158,21 +154,17 @@
                             </div>
                             <a href="#contact" class="btn btn-small" data-key="cars.rent">Rent Now</a>
                         </div>
-                        <p class="car-best-for" data-key="cars.best">Best for: <span data-key="cars.rav4.best">Family road trips</span></p>
+                        <p class="car-best-for"><span data-key="cars.best">Best for:</span> <span
+                                data-key="cars.rav4.best">Family
+                                road trips</span></p>
                     </div>
                 </div>
 
                 <!-- Hyundai Accent -->
-                <div class="car-card" data-category="economy">
+                <div class="car-card fade-in" data-category="economy">
                     <div class="car-image-wrapper">
-                        <img 
-                            src="Pics/Hyundai Accent.png" 
-                            alt="Hyundai Accent" 
-                            class="car-image"
-                            loading="lazy"
-                            width="800"
-                            height="600"
-                        >
+                        <img src="Pics/Hyundai Accent.png" alt="Hyundai Accent" class="car-image" loading="lazy"
+                            width="800" height="600">
                         <div class="car-badge economy" data-key="cars.badge.economy">Economy</div>
                     </div>
                     <div class="car-info">
@@ -188,21 +180,17 @@
                             </div>
                             <a href="#contact" class="btn btn-small" data-key="cars.rent">Rent Now</a>
                         </div>
-                        <p class="car-best-for" data-key="cars.best">Best for: <span data-key="cars.hyundai.best">Budget travelers</span></p>
+                        <p class="car-best-for"><span data-key="cars.best">Best for:</span> <span
+                                data-key="cars.hyundai.best">Budget
+                                travelers</span></p>
                     </div>
                 </div>
 
                 <!-- Porsche 911 -->
-                <div class="car-card featured" data-category="exotic">
+                <div class="car-card featured fade-in delay-100" data-category="exotic">
                     <div class="car-image-wrapper">
-                        <img 
-                            src="Pics/Porsche 911.png" 
-                            alt="Porsche 911" 
-                            class="car-image"
-                            loading="lazy"
-                            width="800"
-                            height="600"
-                        >
+                        <img src="Pics/Porsche 911.png" alt="Porsche 911" class="car-image" loading="lazy" width="800"
+                            height="600">
                         <div class="car-badge exotic" data-key="cars.badge.exotic">Exotic</div>
                         <div class="featured-badge" data-key="cars.featured">Premium</div>
                     </div>
@@ -219,7 +207,8 @@
                             </div>
                             <a href="#contact" class="btn btn-small" data-key="cars.rent">Rent Now</a>
                         </div>
-                        <p class="car-best-for" data-key="cars.best">Best for: <span data-key="cars.porsche.best">Special occasions</span></p>
+                        <p class="car-best-for"><span data-key="cars.best">Best for:</span> <span
+                                data-key="cars.porsche.best">Special occasions</span></p>
                     </div>
                 </div>
             </div>
@@ -229,18 +218,14 @@
     <!-- Location Section -->
     <section class="location" id="location">
         <div class="container">
-            <h2 class="section-title" data-key="location.title">Find Us</h2>
-            <p class="location-text" data-key="location.description">Visit our rental location or contact us for delivery</p>
-            <div class="map-container">
-                <iframe 
+            <h2 class="section-title fade-in" data-key="location.title">Find Us</h2>
+            <p class="section-subtitle fade-in delay-100" data-key="location.description">Visit our rental location or
+                contact us for delivery</p>
+            <div class="map-container fade-in delay-200">
+                <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.184132576894!2d-73.98811768459398!3d40.75889597932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
-                    width="100%" 
-                    height="400" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade"
-                    title="Business Location">
+                    width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade" title="Business Location">
                 </iframe>
             </div>
         </div>
@@ -249,20 +234,21 @@
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
-            <h2 class="section-title" data-key="contact.title">Get In Touch</h2>
-            <p class="contact-text" data-key="contact.description">Ready to drive? Contact us now for instant booking</p>
+            <h2 class="section-title fade-in" data-key="contact.title">Get In Touch</h2>
+            <p class="section-subtitle fade-in delay-100" data-key="contact.description">Ready to drive? Contact us now
+                for instant booking</p>
             <div class="contact-methods">
-                <a href="https://wa.me/1234567890" class="contact-card" target="_blank" rel="noopener">
+                <a href="https://wa.me/1234567890" class="contact-card fade-in" target="_blank" rel="noopener">
                     <div class="contact-icon">💬</div>
                     <h3 data-key="contact.whatsapp.title">WhatsApp</h3>
                     <p data-key="contact.whatsapp.desc">Chat with us instantly</p>
                 </a>
-                <a href="tel:+1234567890" class="contact-card">
+                <a href="tel:+1234567890" class="contact-card fade-in delay-100">
                     <div class="contact-icon">📞</div>
                     <h3 data-key="contact.phone.title">Call Us</h3>
                     <p data-key="contact.phone.desc">+1 (234) 567-890</p>
                 </a>
-                <a href="mailto:info@carrental.com" class="contact-card">
+                <a href="mailto:info@carrental.com" class="contact-card fade-in delay-200">
                     <div class="contact-icon">✉️</div>
                     <h3 data-key="contact.email.title">Email</h3>
                     <p data-key="contact.email.desc">info@carrental.com</p>
@@ -274,20 +260,25 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p class="footer-text" data-key="footer.text">&copy; 2024 Premium Car Rental. <span data-key="footer.rights">All rights reserved.</span></p>
+            <p class="footer-text" data-key="footer.text">&copy; 2024 Premium Car Rental. <span
+                    data-key="footer.rights">All rights reserved.</span></p>
         </div>
     </footer>
 
     <!-- Floating Buttons -->
-    <a href="https://wa.me/1234567890" class="floating-btn whatsapp-btn" target="_blank" rel="noopener" aria-label="WhatsApp">
-        <span class="btn-icon">💬</span>
-        <span class="btn-text" data-key="floating.whatsapp">WhatsApp</span>
-    </a>
-    <a href="tel:+1234567890" class="floating-btn call-btn" aria-label="Call">
-        <span class="btn-icon">📞</span>
-        <span class="btn-text" data-key="floating.call">Call</span>
-    </a>
+    <div class="floating-container">
+        <a href="https://wa.me/1234567890" class="floating-btn whatsapp-btn" target="_blank" rel="noopener"
+            aria-label="WhatsApp">
+            <span class="btn-icon">💬</span>
+            <span class="btn-text" data-key="floating.whatsapp">WhatsApp</span>
+        </a>
+        <a href="tel:+1234567890" class="floating-btn call-btn" aria-label="Call">
+            <span class="btn-icon">📞</span>
+            <span class="btn-text" data-key="floating.call">Call</span>
+        </a>
+    </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>

@@ -227,29 +227,45 @@ const translations = {
     }
 };
 
-// Get current language from localStorage or default to English
+// Get current language and theme from localStorage
 let currentLang = localStorage.getItem('selectedLanguage') || 'en';
+let currentTheme = localStorage.getItem('theme') || 'dark';
 
-// Initialize language on page load
-document.addEventListener('DOMContentLoaded', function() {
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', function () {
     // Set initial language
     setLanguage(currentLang);
-    
-    // Add event listeners to language buttons
+
+    // Set initial theme
+    setTheme(currentTheme);
+
+    // Language buttons
     const langButtons = document.querySelectorAll('.lang-btn');
     langButtons.forEach(btn => {
-        btn.addEventListener('click', function() {
+        btn.addEventListener('click', function () {
             const lang = this.getAttribute('data-lang');
             setLanguage(lang);
         });
     });
+
+    // Theme toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', function () {
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            setTheme(newTheme);
+        });
+    }
+
+    // Initialize Scroll Animations
+    initScrollAnimations();
 });
 
 // Function to set language
 function setLanguage(lang) {
     currentLang = lang;
     localStorage.setItem('selectedLanguage', lang);
-    
+
     // Update active button
     document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.classList.remove('active');
@@ -257,7 +273,7 @@ function setLanguage(lang) {
             btn.classList.add('active');
         }
     });
-    
+
     // Set document direction for RTL languages
     if (lang === 'ar') {
         document.documentElement.setAttribute('dir', 'rtl');
@@ -266,7 +282,7 @@ function setLanguage(lang) {
         document.documentElement.setAttribute('dir', 'ltr');
         document.documentElement.setAttribute('lang', lang);
     }
-    
+
     // Update all translatable elements
     const elements = document.querySelectorAll('[data-key]');
     elements.forEach(element => {
@@ -281,4 +297,40 @@ function setLanguage(lang) {
             }
         }
     });
+}
+
+// Function to set theme
+function setTheme(theme) {
+    currentTheme = theme;
+    localStorage.setItem('theme', theme);
+    document.documentElement.setAttribute('data-theme', theme);
+
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+        const icon = themeToggle.querySelector('.icon');
+        if (icon) {
+            icon.textContent = theme === 'dark' ? '☀️' : '🌙';
+        }
+    }
+}
+
+// Scroll Animations using Intersection Observer
+function initScrollAnimations() {
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target); // Only animate once
+            }
+        });
+    }, observerOptions);
+
+    const animatedElements = document.querySelectorAll('.fade-in');
+    animatedElements.forEach(el => observer.observe(el));
 }
