@@ -2,6 +2,8 @@
 
 A modern, responsive one-page website for car rental business with multi-language support.
 
+**Live Website:** [https://dhia336.github.io/Car-Renting/](https://dhia336.github.io/Car-Renting/)
+
 ## Features
 
 - ✅ **Fully Responsive** - Mobile-first design optimized for all devices
@@ -27,19 +29,6 @@ Images are already optimized with:
 - Proper width/height attributes
 - Responsive sizing
 
-### Optional: Further Optimization
-
-To further optimize images, you can use the provided Python script:
-
-```bash
-# Install Pillow (if not already installed)
-pip install Pillow
-
-# Run optimization script
-python optimize-images.py
-```
-
-This will create optimized JPEG and WebP versions in `Pics/optimized/` folder.
 
 ## Customization
 
